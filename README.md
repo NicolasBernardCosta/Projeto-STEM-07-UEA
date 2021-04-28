@@ -2,6 +2,10 @@
 
 #Código do App em .py
 
+
+
+
+
 import kivy
 from kivy.app import App
 from kivy.uix.floatlayout import FloatLayout
