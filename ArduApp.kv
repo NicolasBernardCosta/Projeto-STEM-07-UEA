@@ -1,0 +1,336 @@
+Manager:
+	Menu:
+		name:'menu'
+	Game:
+		name:'game'
+	Comandos:
+		name:'comando'
+	Hardware:
+		name:'hardware'
+	Experimentos:
+		name:'experimento'
+	Variaveis:
+		name:'variavel'
+	Entradas:
+		name:'entrada'
+	Saidas:
+		name:'saida'
+	Matematica:
+		name:'matematica'
+	Controles:
+		name:'controle'
+	Ferramentas:
+		name:'ferramenta'
+	Sensores:
+		name:'sensor'
+	Arduino:
+		name:'arduino'
+	
+#<MenuButton@Button>:
+	#font_size:'50sp'
+	#background_normal:'menuButton.png'
+	#background_down:'menuButtonpressed.png'
+	#border: 90,90,90,90
+
+<Menu>:
+	BoxLayout:
+		canvas:
+			Color:
+				rgba:1,1,1,1
+			Rectangle:
+				size:self.size
+				pos:self.pos
+		orientation: 'vertical'
+		padding: '200dp', '50dp'
+		spacing:'100dp'
+		Widget:
+		BoxLayout:
+			padding:"100dp"
+			spacing:"150dp"
+			Button:
+				text:'Start'
+				on_press:
+				on_release:app.root.current = 'game'
+			Button:
+				text:'Exit'
+				on_press:
+				on_release:app.Stop()
+
+
+
+<Game>:
+	FloatLayout:
+		canvas:
+			Color:
+				rgba:1,0.9,1,1
+			Rectangle:
+				size:self.size
+				pos:self.pos
+		orientation: 'vertical'
+		padding: '200dp', '50dp'
+		spacing:'100dp'
+		BoxLayout:
+			orientation: "vertical"
+			padding:"200dp", "50dp"
+			spacing:"100dp"
+			Button:
+				text:'Voltar'
+				on_release:app.root.current = 'menu'
+			Button:
+				text:'Comandos'
+				on_press:
+				on_release:app.root.current = 'comando'
+			Button:
+				text:'Hardware'
+				on_press:
+				on_release:app.root.current = 'hardware'
+			Button:
+				text:'Experimentos'
+				on_press:
+				on_release:app.root.current = 'experimento'
+
+
+<Comandos>:
+	FloatLayout:
+		canvas:
+			Color:
+				rgba:1,0.9,1,1
+			Rectangle:
+				size:self.size
+				pos:self.pos
+		orientation: 'vertical'
+		padding: '200dp', '50dp'
+		spacing:'100dp'
+		BoxLayout:
+			orientation: "vertical"
+			padding:"200dp", "50dp"
+			spacing:"100dp"
+			Button:
+				text:'Voltar'
+				on_release:app.root.current = 'game'
+			Button:
+				text:'Variáveis'
+				on_press:
+				on_release:app.root.current = 'variavel'
+			Button:
+				text:'Entrada'
+				on_press:
+				on_release:app.root.current = 'entrada'
+			Button:
+				text:'Saída'
+				on_press:
+				on_release:app.root.current = 'saida'
+			Button:
+				text:'Matemática'
+				on_press:
+				on_release:app.root.current = 'matematica'
+			Button:
+				text:'Controles'
+				on_press:
+				on_release:app.root.current = 'controle'
+
+
+<Variaveis>:
+	FloatLayout:
+		canvas:
+			Color:
+				rgba:1,0.9,1,1
+			Rectangle:
+				size:self.size
+				pos:self.pos
+		orientation: 'vertical'
+		padding: '200dp', '50dp'
+		spacing:'100dp'
+		BoxLayout:
+			orientation: "vertical"
+			padding:"200dp", "50dp"
+			spacing:"100dp"
+			Button:
+				text:'Voltar'
+				on_release:app.root.current = 'comando'
+
+<Entradas>:
+	FloatLayout:
+		canvas:
+			Color:
+				rgba:1,0.9,1,1
+			Rectangle:
+				size:self.size
+				pos:self.pos
+		orientation: 'vertical'
+		padding: '200dp', '50dp'
+		spacing:'100dp'
+		BoxLayout:
+			orientation: "vertical"
+			padding:"200dp", "50dp"
+			spacing:"100dp"
+			Button:
+				text:'Voltar'
+				on_release:app.root.current = 'comando'
+
+<Saidas>:
+	FloatLayout:
+		canvas:
+			Color:
+				rgba:1,0.9,1,1
+			Rectangle:
+				size:self.size
+				pos:self.pos
+		orientation: 'vertical'
+		padding: '200dp', '50dp'
+		spacing:'100dp'
+		BoxLayout:
+			orientation: "vertical"
+			padding:"200dp", "50dp"
+			spacing:"100dp"
+			Button:
+				text:'Voltar'
+				on_release:app.root.current = 'comando'
+
+<Matematica>:
+	FloatLayout:
+		canvas:
+			Color:
+				rgba:1,0.9,1,1
+			Rectangle:
+				size:self.size
+				pos:self.pos
+		orientation: 'vertical'
+		padding: '200dp', '50dp'
+		spacing:'100dp'
+		BoxLayout:
+			orientation: "vertical"
+			padding:"200dp", "50dp"
+			spacing:"100dp"
+			Button:
+				text:'Voltar'
+				on_release:app.root.current = 'comando'
+
+<Controles>:
+	FloatLayout:
+		canvas:
+			Color:
+				rgba:1,0.9,1,1
+			Rectangle:
+				size:self.size
+				pos:self.pos
+		orientation: 'vertical'
+		padding: '200dp', '50dp'
+		spacing:'100dp'
+		BoxLayout:
+			orientation: "vertical"
+			padding:"200dp", "50dp"
+			spacing:"100dp"
+			Button:
+				text:'Voltar'
+				on_release:app.root.current = 'comando'
+
+
+<Hardware>:
+	FloatLayout:
+		canvas:
+			Color:
+				rgba:1,1,1,1
+			Rectangle:
+				size:self.size
+				pos:self.pos
+		orientation:'vertical'
+		padding: '200dp', '50dp'
+		spacing:'100dp'
+		BoxLayout:
+			orientation: "vertical"
+			padding:"200dp", "50dp"
+			spacing:"100dp"
+			Button:
+				text:'Voltar'
+				on_release:app.root.current = 'game'
+			Button:
+				text:'Ferramentas'
+				on_press:
+				on_release:app.root.current = 'ferramenta'
+			Button:
+				text:'Sensores'
+				on_press:
+				on_release:app.root.current = 'sensor'
+			Button:
+				text:'Arduino'
+				on_press:
+				on_release:app.root.current = 'arduino'
+
+
+<Ferramentas>:
+	FloatLayout:
+		canvas:
+			Color:
+				rgba:1,0.9,1,1
+			Rectangle:
+				size:self.size
+				pos:self.pos
+		orientation: 'vertical'
+		padding: '200dp', '50dp'
+		spacing:'100dp'
+		BoxLayout:
+			orientation: "vertical"
+			padding:"200dp", "50dp"
+			spacing:"100dp"
+			Button:
+				text:'Voltar'
+				on_release:app.root.current = 'hardware'
+
+<Sensores>:
+	FloatLayout:
+		canvas:
+			Color:
+				rgba:1,0.9,1,1
+			Rectangle:
+				size:self.size
+				pos:self.pos
+		orientation: 'vertical'
+		padding: '200dp', '50dp'
+		spacing:'100dp'
+		BoxLayout:
+			orientation: "vertical"
+			padding:"200dp", "50dp"
+			spacing:"100dp"
+			Button:
+				text:'Voltar'
+				on_release:app.root.current = 'hardware'
+
+<Arduino>:
+	FloatLayout:
+		canvas:
+			Color:
+				rgba:1,0.9,1,1
+			Rectangle:
+				size:self.size
+				pos:self.pos
+		orientation: 'vertical'
+		padding: '200dp', '50dp'
+		spacing:'100dp'
+		BoxLayout:
+			orientation: "vertical"
+			padding:"200dp", "50dp"
+			spacing:"100dp"
+			Button:
+				text:'Voltar'
+				on_release:app.root.current = 'hardware'
+
+
+<Experimentos>:
+	FloatLayout:
+		canvas:
+			Color:
+				rgba:1,1,1,1
+			Rectangle:
+				size:self.size
+				pos:self.pos
+		orientation:'vertical'
+		padding: '200dp', '50dp'
+		spacing:'100dp'
+		BoxLayout:
+			orientation: "vertical"
+			padding:"200dp", "50dp"
+			spacing:"100dp"
+			Button:
+				text:'Voltar'
+				on_release:app.root.current = 'game'
