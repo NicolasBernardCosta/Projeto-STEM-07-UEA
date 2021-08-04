@@ -6,6 +6,7 @@ from kivy.uix.widget import Widget
 from kivy.uix.screenmanager import ScreenManager, Screen
 from kivy.uix.image import Image
 from kivy.properties import ObjectProperty
+from kivy.uix.popup import Popup
 
 class Manager(ScreenManager):
 	pass
@@ -26,6 +27,9 @@ class Experimentos(Screen):
 	pass
 
 class Variaveis(Screen):
+	pass
+
+class MyPopup(Popup):
 	pass
 
 class Entradas(Screen):
