@@ -1,3 +1,5 @@
+#:import Factory kivy.factory.Factory
+
 Manager:
 	Menu:
 		name:'menu'
@@ -25,9 +27,11 @@ Manager:
 		name:'sensor'
 	Arduino:
 		name:'arduino'
+	#MyPopUp:
+		#name:popup
 	
 <MenuButton@Button>:
-	font_size:'50sp'
+	font_size:'35sp'
 	background_normal:'menuButton.png'
 	background_down:'menuButtonpressed.png'
 	border: 90,90,90,90
@@ -44,6 +48,7 @@ Manager:
 		padding: '200dp', '50dp'
 		spacing:'100dp'
 		Widget:
+			text:"Experimentos em Arduino"
 		BoxLayout:
 			padding:"100dp"
 			spacing:"150dp"
@@ -55,8 +60,6 @@ Manager:
 				text:'Exit'
 				on_press:
 				on_release:app.Stop()
-
-
 
 <Game>:
 	FloatLayout:
@@ -71,7 +74,7 @@ Manager:
 		spacing:'100dp'
 		BoxLayout:
 			orientation: "vertical"
-			padding:"200dp", "50dp"
+			padding:"50dp", "50dp"
 			spacing:"100dp"
 			MenuButton:
 				text:'Voltar'
@@ -101,33 +104,36 @@ Manager:
 		orientation: 'vertical'
 		padding: '200dp', '50dp'
 		spacing:'100dp'
-		BoxLayout:
-			orientation: "vertical"
-			padding:"200dp", "50dp"
-			spacing:"100dp"
-			MenuButton:
-				text:'Voltar'
-				on_release:app.root.current = 'game'
-			MenuButton:
-				text:'Variáveis'
-				on_press:
-				on_release:app.root.current = 'variavel'
-			MenuButton:
-				text:'Entrada'
-				on_press:
-				on_release:app.root.current = 'entrada'
-			MenuButton:
-				text:'Saída'
-				on_press:
-				on_release:app.root.current = 'saida'
-			MenuButton:
-				text:'Matemática'
-				on_press:
-				on_release:app.root.current = 'matematica'
-			MenuButton:
-				text:'Controles'
-				on_press:
-				on_release:app.root.current = 'controle'
+		ScrollView:
+			BoxLayout:
+				size_hint_y: None
+	        	padding: '50dp', '50dp'
+	        	height: 1200
+            	spacing: 40
+	            orientation:'vertical'
+				MenuButton:
+					text:'Voltar'
+					on_release:app.root.current = 'game'
+				MenuButton:
+					text:'Variáveis'
+					on_press:
+					on_release:app.root.current = 'variavel'
+				MenuButton:
+					text:'Entrada'
+					on_press:
+					on_release:app.root.current = 'entrada'
+				MenuButton:
+					text:'Saída'
+					on_press:
+					on_release:app.root.current = 'saida'
+				MenuButton:
+					text:'Matemática'
+					on_press:
+					on_release:app.root.current = 'matematica'
+				MenuButton:
+					text:'Controles'
+					on_press:
+					on_release:app.root.current = 'controle'
 
 <Variaveis>:
 	FloatLayout:
@@ -147,6 +153,24 @@ Manager:
 			MenuButton:
 				text:'Voltar'
 				on_release:app.root.current = 'comando'
+			MenuButton:
+				text:'Definir Variável Como'
+			MenuButton:
+				text:'Alterar Variável Por'
+				on_release: Factory.MyPopup().open()
+
+
+<MyPopup@Popup>:
+    auto_dismiss: False
+    title: 'Alterar Variável Por'
+    title_allign: 'center'
+    size_hint_y:0.5
+    size_hint_x:0.5
+    MenuButton:
+        text: 'Close me!'
+        on_release: root.dismiss()
+
+				
 
 <Entradas>:
 	FloatLayout:
@@ -159,19 +183,33 @@ Manager:
 		orientation: 'vertical'
 		padding: '200dp', '50dp'
 		spacing:'100dp'
-		BoxLayout:
-			orientation: "vertical"
-			padding:"200dp", "50dp"
-			spacing:"100dp"
-			Label:
-				text:"Aqui será aonde os comandos serão reconhecidos, e quais são os caminhos da placa que serão usados nos seus projetos, além dos instrumentos utilizados, seu formato é arredondado, encaixando-se dentro de outros blocos que possuem caixas de texto:"
-				font_size: 30
-				background_color: (1,0.3,0.6,0.5)
-				text_size: self.size				
-				
-			MenuButton:
-				text:'Voltar'
-				on_release:app.root.current = 'comando'
+	    ScrollView:
+	        BoxLayout:
+	        	size_hint_y: None
+	        	padding: '50dp', '50dp'
+	        	height: 1200
+            	spacing: 40
+	            orientation:'vertical'
+	            Label:
+					text:"Aqui será aonde os comandos serão reconhecidos, e quais são os caminhos da placa que serão usados nos seus projetos, além dos instrumentos utilizados, seu formato é arredondado, encaixando-se dentro de outros blocos que possuem caixas de texto:"
+					font_size:25
+					size: self.texture_size
+					text_size: root.width, None 
+				MenuButton:
+					text:'Voltar'
+					on_release:app.root.current = 'comando'
+				MenuButton:
+					text:'Ler Pino Digital'
+				MenuButton:
+					text:'Ler Pino Analógico'
+				MenuButton:
+					text:'Ler Graus de servo'
+				MenuButton:
+					text:'Ler do Serial'
+				MenuButton:
+					text:'Ler Sensor de Distância'
+				MenuButton:
+					text:'Ler sensor de Temperatura'
 
 <Saidas>:
 	FloatLayout:
@@ -184,13 +222,28 @@ Manager:
 		orientation: 'vertical'
 		padding: '200dp', '50dp'
 		spacing:'100dp'
-		BoxLayout:
-			orientation: "vertical"
-			padding:"200dp", "50dp"
-			spacing:"100dp"
-			MenuButton:
-				text:'Voltar'
-				on_release:app.root.current = 'comando'
+		ScrollView:
+			BoxLayout:
+				size_hint_y: None
+	        	padding: '50dp', '50dp'
+	        	height: 1200
+            	spacing: 40
+	            orientation:'vertical'
+				MenuButton:
+					text:'Voltar'
+					on_release:app.root.current = 'comando'
+				MenuButton:
+					text:'Definir LED Incorporado'
+				MenuButton:
+					text:'Definir LED RGB'
+				MenuButton:
+					text:'Girar Servo'
+				MenuButton:
+					text:'Reproduzir Alto-falante'
+				MenuButton:
+					text:'Desativar Alto-falante'
+				MenuButton:
+					text:'Imprimir no Monitor Serial'
 
 <Matematica>:
 	FloatLayout:
@@ -203,13 +256,34 @@ Manager:
 		orientation: 'vertical'
 		padding: '200dp', '50dp'
 		spacing:'100dp'
-		BoxLayout:
-			orientation: "vertical"
-			padding:"200dp", "50dp"
-			spacing:"100dp"
-			MenuButton:
-				text:'Voltar'
-				on_release:app.root.current = 'comando'
+		ScrollView:
+			BoxLayout:
+				size_hint_y: None
+	        	padding: '50dp', '50dp'
+	        	height: 1200
+            	spacing: 40
+	            orientation:'vertical'
+				MenuButton:
+					text:'Voltar'
+					on_release:app.root.current = 'comando'
+				MenuButton:
+					text:'Operador Lógico de Matemática'
+				MenuButton:
+					text:'Operador lógico de Comparação'
+				MenuButton:
+					text:'Seleção Aleatória de Número'
+				MenuButton:
+					text:'Operador Lógico e/ou'
+				MenuButton:
+					text:'Operador Lógico de Negação'
+				MenuButton:
+					text:'Operadorr de Funções Matemáticas'
+				MenuButton:
+					text:'Mapear n para a faixa de x a y'
+				MenuButton:
+					text:'Restringir n à faixa de x a y'
+				MenuButton:
+					text:'Operador ALTO/BAIXO'
 
 <Controles>:
 	FloatLayout:
@@ -222,13 +296,28 @@ Manager:
 		orientation: 'vertical'
 		padding: '200dp', '50dp'
 		spacing:'100dp'
-		BoxLayout:
-			orientation: "vertical"
-			padding:"200dp", "50dp"
-			spacing:"100dp"
-			MenuButton:
-				text:'Voltar'
-				on_release:app.root.current = 'comando'
+		ScrollView:
+			BoxLayout:
+				size_hint_y: None
+	        	padding: '50dp', '50dp'
+	        	height: 1200
+            	spacing: 40
+	            orientation:'vertical'
+				MenuButton:
+					text:'Voltar'
+					on_release:app.root.current = 'comando'
+				MenuButton:
+					text:'Aguardar'
+				MenuButton:
+					text:'Repetir'
+				MenuButton:
+					text:'Repetir Enquanto/Até'
+				MenuButton:
+					text:'Função Se'
+				MenuButton:
+					text:'Função Se/Outro'
+				MenuButton:
+					text:'Função de Contagem'
 
 
 <Hardware>:
@@ -242,26 +331,33 @@ Manager:
 		orientation:'vertical'
 		padding: '200dp', '50dp'
 		spacing:'100dp'
-		BoxLayout:
-			orientation: "vertical"
-			padding:"200dp", "50dp"
-			spacing:"100dp"
-			Button:
-				text:'Voltar'
-				on_release:app.root.current = 'game'
-			MenuButton:
-				text:'Arduino'
-				on_press:
-				on_release:app.root.current = 'arduino'
-			MenuButton:
-				text:'Ferramentas'
-				on_press:
-				on_release:app.root.current = 'ferramenta'
-			MenuButton:
-				text:'Sensores'
-				on_press:
-				on_release:app.root.current = 'sensor'
-			
+		ScrollView:
+			BoxLayout:
+				size_hint_y: None
+	        	padding: '50dp', '50dp'
+	        	height: 1200
+            	spacing: 40
+	            orientation:'vertical'
+				Label:
+					text:"Agora alguns instrumentos comumente utilizados em projetos no Arduino que podem ser reconhecidos usando linguagem em blocos:"
+					font_size: 25
+					text_size: root.width, None
+					size: self.texture_size
+				MenuButton:
+					text:'Voltar'
+					on_release:app.root.current = 'game'
+				MenuButton:
+					text:'Arduino'
+					on_press:
+					on_release:app.root.current = 'arduino'
+				MenuButton:
+					text:'Ferramentas'
+					on_press:
+					on_release:app.root.current = 'ferramenta'
+				MenuButton:
+					text:'Sensores'
+					on_press:
+					on_release:app.root.current = 'sensor'
 
 
 <Ferramentas>:
@@ -275,13 +371,28 @@ Manager:
 		orientation: 'vertical'
 		padding: '200dp', '50dp'
 		spacing:'100dp'
-		BoxLayout:
-			orientation: "vertical"
-			padding:"200dp", "50dp"
-			spacing:"100dp"
-			MenuButton:
-				text:'Voltar'
-				on_release:app.root.current = 'hardware'
+		ScrollView:
+			BoxLayout:
+				size_hint_y: None
+		        padding: '50dp', '50dp'
+		        height: 1200
+	            spacing: 40
+		        orientation:'vertical'
+				MenuButton:
+					text:'Voltar'
+					on_release:app.root.current = 'hardware'
+				MenuButton:
+					text:'Lâmpada'
+				MenuButton:
+					text:'LED'
+				MenuButton:
+					text:'LED RGB'
+				MenuButton:
+					text:'Piezo'
+				MenuButton:
+					text:'Resistor'
+				MenuButton:
+					text:'Transistor'
 
 <Sensores>:
 	FloatLayout:
@@ -294,13 +405,30 @@ Manager:
 		orientation: 'vertical'
 		padding: '200dp', '50dp'
 		spacing:'100dp'
-		BoxLayout:
-			orientation: "vertical"
-			padding:"200dp", "50dp"
-			spacing:"100dp"
-			MenuButton:
-				text:'Voltar'
-				on_release:app.root.current = 'hardware'
+		ScrollView:
+			BoxLayout:
+				size_hint_y: None
+	        	padding: '50dp', '50dp'
+	    	    height: 1200
+            	spacing: 40
+	        	orientation:'vertical'
+				MenuButton:
+					text:'Voltar'
+					on_release:app.root.current = 'hardware'
+				MenuButton:
+	        	    text: 'Mini Servo'
+	        	MenuButton:
+	        		text: 'Monitor Serial'
+	        	MenuButton:
+	        	    text: 'Sensor de Distância Ultrassônico'
+	        	MenuButton:
+	        		text: 'Sensor PIR'
+	        	MenuButton:
+	            	text: 'Sensor de Temperatura'
+	        	MenuButton:
+	        		text:'Sensor de Gás Winsen'
+	            
+	            
 
 <Arduino>:
 	FloatLayout:
@@ -313,14 +441,20 @@ Manager:
 		orientation: 'vertical'
 		padding: '200dp', '50dp'
 		spacing:'100dp'
-		BoxLayout:
-			orientation: "vertical"
-			padding:"200dp", "50dp"
-			spacing:"100dp"
-			MenuButton:
-				text:'Voltar'
-				on_release:app.root.current = 'hardware'
-
+		ScrollView:
+			BoxLayout:
+				size_hint_y: None
+	        	padding: '50dp', '50dp'
+	        	height: 1200
+            	spacing: 40
+	            orientation:'vertical'
+				MenuButton:
+					text:'Voltar'
+					on_release:app.root.current = 'hardware'
+				MenuButton:
+					text:'Placa de Ensaio'
+				MenuButton:
+					text:'Arduino'
 
 <Experimentos>:
 	FloatLayout:
@@ -333,10 +467,27 @@ Manager:
 		orientation:'vertical'
 		padding: '200dp', '50dp'
 		spacing:'100dp'
-		BoxLayout:
-			orientation: "vertical"
-			padding:"200dp", "50dp"
-			spacing:"100dp"
-			MenuButton:
-				text:'Voltar'
-				on_release:app.root.current = 'game'
+		ScrollView:
+			BoxLayout:
+				size_hint_y: None
+	        	padding: '50dp', '50dp'
+	        	height: 1200
+            	spacing: 40
+	            orientation:'vertical'
+				MenuButton:
+					text:'Voltar'
+					on_release:app.root.current = 'game'
+				MenuButton:
+					text:'Semáforo'
+				MenuButton:
+					text:'Luz Acionada por Movimento'
+				MenuButton:
+					text:'Sensor de Movimento'
+				MenuButton:
+					text:'Detector de Incêndio'
+				MenuButton:
+					text:'Movimentando um Servo'
+				MenuButton:
+					text:'Escrever Frases no Monitor Serial'
+				MenuButton:
+					text:'Lixeira Inteligente'
