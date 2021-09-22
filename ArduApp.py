@@ -3,6 +3,7 @@ import kivy
 from kivy.app import App
 from kivy.uix.floatlayout import FloatLayout
 from kivy.uix.widget import Widget
+from kivy.uix.image import Image
 from kivy.uix.screenmanager import ScreenManager, Screen
 from kivy.uix.image import Image
 from kivy.properties import ObjectProperty
@@ -47,12 +48,75 @@ class Controles(Screen):
 class Ferramentas(Screen):
 	pass
 
+class Lampada(Screen):
+	pass
+
+class LED(Screen):
+	pass
+
+class LEDRGB(Screen):
+	pass
+
+class Piezo(Screen):
+	pass
+
+class Resistor(Screen):
+	pass
+
+class Transistor(Screen):
+	pass
+
 class Sensores(Screen):
+	pass
+
+class MicroServo(Screen):
+	pass
+
+class MonitorSerial(Screen):
+	pass
+
+class SensorUltra(Screen):
+	pass
+
+class SensorPIR(Screen):
+	pass
+
+class SensorTemperatura(Screen):
+	pass
+
+class SensorGas(Screen):
 	pass
 
 class Arduino(Screen):
 	pass
 	
+class PlacaEnsaio(Screen):
+	pass
+
+class PlacaArduino(Screen):
+	pass
+
+class Semaforo(Screen):
+	pass
+
+class LuzMovimento(Screen):
+	pass
+
+class SensorMovimento(Screen):
+	pass
+
+class DetectorIncendio(Screen):
+	pass
+
+class MovimentandoServo(Screen):
+	pass
+
+class Frasemonitor(Screen):
+	pass
+
+class LixeiraInteligente(Screen):
+	pass
+
 class ArduApp(App):
 	pass
 
