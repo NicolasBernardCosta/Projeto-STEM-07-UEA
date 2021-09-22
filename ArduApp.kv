@@ -23,10 +23,39 @@ Manager:
 		name:'controle'
 	Ferramentas:
 		name:'ferramenta'
+	Lampada:
+		name:'lampada'
+	LED:
+		name:'led'
+	LEDRGB:
+		name:'led rgb'
+	Piezo:
+		name:'piezo'
+	Resistor:
+		name:'resistor'
+	Transistor:
+		name:'transistor'
 	Sensores:
 		name:'sensor'
+	MicroServo:
+		name:'micro servo'
+	MonitorSerial:
+		name:'monitor serial'
+	SensorUltra:
+		name:'sensor ultra'
+	SensorPIR:
+		name:'sensor pir'
+	SensorTemperatura:
+		name:'sensor temperatura'
+	SensorGas:
+		name:'sensor gas'
 	Arduino:
 		name:'arduino'
+	PlacaEnsaio:
+		name:'placa ensaio'
+	PlacaArduino:
+		name:'placa arduino'
+
 	#MyPopUp:
 		#name:popup
 	
@@ -383,16 +412,189 @@ Manager:
 					on_release:app.root.current = 'hardware'
 				MenuButton:
 					text:'Lâmpada'
+					on_release:app.root.current = 'lampada'
 				MenuButton:
 					text:'LED'
+					on_release:app.root.current = 'led'
 				MenuButton:
 					text:'LED RGB'
+					on_release:app.root.current = 'led rgb'
 				MenuButton:
 					text:'Piezo'
+					on_release:app.root.current = 'piezo'
 				MenuButton:
 					text:'Resistor'
+					on_release:app.root.current = 'resistor'
 				MenuButton:
 					text:'Transistor'
+					on_release:app.root.current = 'transistor'
+
+<Lampada>:
+	FloatLayout:
+		canvas:
+			Color:
+				rgba:0.2,1,0.6,0.5
+			Rectangle:
+				size:self.size
+				pos:self.pos
+		orientation: 'vertical'
+		padding: '200dp', '50dp'
+		spacing:'100dp'
+		ScrollView:
+			BoxLayout:
+				size_hint_y: None
+		        padding: '50dp', '50dp'
+		        height: 1200
+	            spacing: 40
+		        orientation:'vertical'
+		        Image:
+		        	source: 'hardware_lampada.png'
+		        Label:
+					text:"A lâmpada é um dispositivo que emite luz e calor ao receber energia elétrica. Possui dois terminais aos quais são ligados os fios de energia."
+					font_size: 25
+					text_size: root.width, None
+					size: self.texture_size
+		        MenuButton:
+					text:'Voltar'
+					on_release:app.root.current = 'ferramenta'
+
+<LED>:
+	FloatLayout:
+		canvas:
+			Color:
+				rgba:0.2,1,0.6,0.5
+			Rectangle:
+				size:self.size
+				pos:self.pos
+		orientation: 'vertical'
+		padding: '200dp', '50dp'
+		spacing:'100dp'
+		ScrollView:
+			BoxLayout:
+				size_hint_y: None
+		        padding: '50dp', '50dp'
+		        height: 1200
+	            spacing: 40
+		        orientation:'vertical'
+		        Image:
+        			source: 'hardware_led.png'
+        		Label:
+					text:"O LED é um diodo que possui a função de emitir luz. Quando a eletricidade passa através dele pelo ânodo e cátodo,ele acende."
+					font_size: 25
+					text_size: root.width, None
+					size: self.texture_size
+		        MenuButton:
+					text:'Voltar'
+					on_release:app.root.current = 'ferramenta'
+
+<LEDRGB>:
+	FloatLayout:
+		canvas:
+			Color:
+				rgba:0.2,1,0.6,0.5
+			Rectangle:
+				size:self.size
+				pos:self.pos
+		orientation: 'vertical'
+		padding: '200dp', '50dp'
+		spacing:'100dp'
+		ScrollView:
+			BoxLayout:
+				size_hint_y: None
+		        padding: '50dp', '50dp'
+		        height: 1200
+	            spacing: 40
+		        orientation:'vertical'
+		        MenuButton:
+					text:'Voltar'
+					on_release:app.root.current = 'ferramenta'
+
+<Piezo>:
+	FloatLayout:
+		canvas:
+			Color:
+				rgba:0.2,1,0.6,0.5
+			Rectangle:
+				size:self.size
+				pos:self.pos
+		orientation: 'vertical'
+		padding: '200dp', '50dp'
+		spacing:'100dp'
+		ScrollView:
+			BoxLayout:
+				size_hint_y: None
+		        padding: '50dp', '50dp'
+		        height: 1200
+	            spacing: 40
+		        orientation:'vertical'
+		        Image:
+        			source: 'hardware_piezo.png'
+        		Label:
+					text:"Componente eletrônico que, quando recebe eletricidade, emite frequências de sons de acordo com a quantidade de energia."
+					font_size: 25
+					text_size: root.width, None
+					size: self.texture_size
+		        MenuButton:
+					text:'Voltar'
+					on_release:app.root.current = 'ferramenta'
+
+<Resistor>:
+	FloatLayout:
+		canvas:
+			Color:
+				rgba:0.2,1,0.6,0.5
+			Rectangle:
+				size:self.size
+				pos:self.pos
+		orientation: 'vertical'
+		padding: '200dp', '50dp'
+		spacing:'100dp'
+		ScrollView:
+			BoxLayout:
+				size_hint_y: None
+		        padding: '50dp', '50dp'
+		        height: 1200
+	            spacing: 40
+		        orientation:'vertical'
+		        Image:
+        			source: 'hardware_resistor.png'
+        		Label:
+					text:"Componente elétrico que tem a função de limitar a corrente elétrica passando por um dispositivo, evitando que este entre em processo de curto-circuito."
+					font_size: 25
+					text_size: root.width, None
+					size: self.texture_size
+		        MenuButton:
+					text:'Voltar'
+					on_release:app.root.current = 'ferramenta'
+
+<Transistor>:
+	FloatLayout:
+		canvas:
+			Color:
+				rgba:0.2,1,0.6,0.5
+			Rectangle:
+				size:self.size
+				pos:self.pos
+		orientation: 'vertical'
+		padding: '200dp', '50dp'
+		spacing:'100dp'
+		ScrollView:
+			BoxLayout:
+				size_hint_y: None
+		        padding: '50dp', '50dp'
+		        height: 1200
+	            spacing: 40
+		        orientation:'vertical'
+		        Image:
+        			source: 'hardware_transistor.png'
+        		Label:
+					text:"O transistor é um dispositivo semicondutor que tem a finalidade de amplificar sinais eletrônicos ou trocá-los. Possui três terminais, um coletor de sinais, um responsável por ser emissor destes, e um terminal base, responsável pela ativação do transistor."
+					font_size: 25
+					text_size: root.width, None
+					size: self.texture_size
+		        MenuButton:
+					text:'Voltar'
+					on_release:app.root.current = 'ferramenta'
 
 <Sensores>:
 	FloatLayout:
@@ -416,19 +618,183 @@ Manager:
 					text:'Voltar'
 					on_release:app.root.current = 'hardware'
 				MenuButton:
-	        	    text: 'Mini Servo'
+	        	    text: 'Micro Servo'
+	        	    on_release:app.root.current = 'micro servo'
 	        	MenuButton:
 	        		text: 'Monitor Serial'
+	        		on_release:app.root.current = 'monitor serial'
 	        	MenuButton:
 	        	    text: 'Sensor de Distância Ultrassônico'
+	        	    on_release:app.root.current = 'sensor ultra'
 	        	MenuButton:
 	        		text: 'Sensor PIR'
+	        		on_release:app.root.current = 'sensor pir'
 	        	MenuButton:
 	            	text: 'Sensor de Temperatura'
+	            	on_release:app.root.current = 'sensor temperatura'
 	        	MenuButton:
 	        		text:'Sensor de Gás Winsen'
-	            
-	            
+	        		on_release:app.root.current = 'sensor gas'
+
+<MicroServo>:
+	FloatLayout:
+		canvas:
+			Color:
+				rgba:0.2,1,0.6,0.5
+			Rectangle:
+				size:self.size
+				pos:self.pos
+		orientation: 'vertical'
+		padding: '200dp', '50dp'
+		spacing:'100dp'
+		ScrollView:
+			BoxLayout:
+				size_hint_y: None
+	        	padding: '50dp', '50dp'
+	    	    height: 1200
+            	spacing: 40
+	        	orientation:'vertical'
+	        	Image:
+        			source: 'hardware_micro_servo.png'
+        		Label:
+					text:"Motor que tem a sua posição e rotação controlada pelo Arduino. Possui três entradas, uma de potência, uma entrada para o pino terra, e uma entrada de sinal. O micro servo normalmente é utilizado para virar rodas, flaps, ou otras partes mecânicas móveis de certo circuito."
+					font_size: 25
+					text_size: root.width, None
+					size: self.texture_size
+	        	MenuButton:
+					text:'Voltar'
+					on_release:app.root.current = 'sensor'
+
+<MonitorSerial>:
+	FloatLayout:
+		canvas:
+			Color:
+				rgba:0.2,1,0.6,0.5
+			Rectangle:
+				size:self.size
+				pos:self.pos
+		orientation: 'vertical'
+		padding: '200dp', '50dp'
+		spacing:'100dp'
+		ScrollView:
+			BoxLayout:
+				size_hint_y: None
+	        	padding: '50dp', '50dp'
+	    	    height: 1200
+            	spacing: 40
+	        	orientation:'vertical'
+	        	MenuButton:
+					text:'Voltar'
+					on_release:app.root.current = 'sensor'
+
+<SensorUltra>:
+	FloatLayout:
+		canvas:
+			Color:
+				rgba:0.2,1,0.6,0.5
+			Rectangle:
+				size:self.size
+				pos:self.pos
+		orientation: 'vertical'
+		padding: '200dp', '50dp'
+		spacing:'100dp'
+		ScrollView:
+			BoxLayout:
+				size_hint_y: None
+	        	padding: '50dp', '50dp'
+	    	    height: 1200
+            	spacing: 40
+	        	orientation:'vertical'
+	        	Image:
+        			source: 'hardware_ultrassonico.png'
+        		Label:
+					text:"O sensor de distância ultrassônico mede a distâancia entre um ponto de referência e um objeto em seu campo de detecção. Ele se utiliza de ondas de som para receber dados, mandando um sinal que pode tanto acionar um alerta sobre certa espaço entre dois objetos, quanto fornecer a distância entre esses dois pontos."
+					font_size: 25
+					text_size: root.width, None
+					size: self.texture_size
+	        	MenuButton:
+					text:'Voltar'
+					on_release:app.root.current = 'sensor'
+
+<SensorPIR>:
+	FloatLayout:
+		canvas:
+			Color:
+				rgba:0.2,1,0.6,0.5
+			Rectangle:
+				size:self.size
+				pos:self.pos
+		orientation: 'vertical'
+		padding: '200dp', '50dp'
+		spacing:'100dp'
+		ScrollView:
+			BoxLayout:
+				size_hint_y: None
+	        	padding: '50dp', '50dp'
+	    	    height: 1200
+            	spacing: 40
+	        	orientation:'vertical'
+	        	Image:
+        			source: 'hardware_pir.png'
+        		Label:
+					text:"O Sensor PIR é um hardware de detecção de movimento por meio de sinais infravermelhos emitidos por objetos que estejam passado pelo seu raio de captura de sinal. Quando detecta movimento, ele é acionado, emitindo um sinal."
+					font_size: 25
+					text_size: root.width, None
+					size: self.texture_size
+	        	MenuButton:
+					text:'Voltar'
+					on_release:app.root.current = 'sensor'
+
+<SensorTemperatura>:
+	FloatLayout:
+		canvas:
+			Color:
+				rgba:0.2,1,0.6,0.5
+			Rectangle:
+				size:self.size
+				pos:self.pos
+		orientation: 'vertical'
+		padding: '200dp', '50dp'
+		spacing:'100dp'
+		ScrollView:
+			BoxLayout:
+				size_hint_y: None
+	        	padding: '50dp', '50dp'
+	    	    height: 1200
+            	spacing: 40
+	        	orientation:'vertical'
+	        	MenuButton:
+					text:'Voltar'
+					on_release:app.root.current = 'sensor'
+
+<SensorGas>:
+	FloatLayout:
+		canvas:
+			Color:
+				rgba:0.2,1,0.6,0.5
+			Rectangle:
+				size:self.size
+				pos:self.pos
+		orientation: 'vertical'
+		padding: '200dp', '50dp'
+		spacing:'100dp'
+		ScrollView:
+			BoxLayout:
+				size_hint_y: None
+	        	padding: '50dp', '50dp'
+	    	    height: 1200
+            	spacing: 40
+	        	orientation:'vertical'
+	        	Image:
+        			source: 'hardware_sensor_gas.png'
+        		Label:
+					text:"Dispositivo usado para detectar fuga de gás. Para isso, o sensor que é sensível a atmosfera ao seu redor, detecta se há variação nos dados do ar do ambiente em que está. Caso haja essa diferença, o sensor aciona um sinal que é enviado ao seu compilador de dados."
+					font_size: 25
+					text_size: root.width, None
+					size: self.texture_size
+	        	MenuButton:
+					text:'Voltar'
+					on_release:app.root.current = 'sensor'            
 
 <Arduino>:
 	FloatLayout:
@@ -453,8 +819,68 @@ Manager:
 					on_release:app.root.current = 'hardware'
 				MenuButton:
 					text:'Placa de Ensaio'
+					on_release:app.root.current = 'placa ensaio'
 				MenuButton:
 					text:'Arduino'
+					on_release:app.root.current = 'placa arduino'
+
+<PlacaEnsaio>:
+	FloatLayout:
+		canvas:
+			Color:
+				rgba:0.2,1,0.6,0.5
+			Rectangle:
+				size:self.size
+				pos:self.pos
+		orientation: 'vertical'
+		padding: '200dp', '50dp'
+		spacing:'100dp'
+		ScrollView:
+			BoxLayout:
+				size_hint_y: None
+	        	padding: '50dp', '50dp'
+	        	height: 1200
+            	spacing: 40
+	            orientation:'vertical'
+	            Image:
+        			source: 'hardware_placa_ensaio.png'
+        		Label:
+					text:"A placa de Ensaio é uma estrutura comumente utilizada com o Arduino. Elas se caracteriza por ser uma placa de plástico com diversos pinos em fileiras onde são conectados componentes com o fim de organizá-los e mantê-los ligados. Possui uma ou duas fileiras de pinos de potência, assim como de pinos terra."
+					font_size: 25
+					text_size: root.width, None
+					size: self.texture_size
+	            MenuButton:
+					text:'Voltar'
+					on_release:app.root.current = 'arduino'
+
+<PlacaArduino>:
+	FloatLayout:
+		canvas:
+			Color:
+				rgba:0.2,1,0.6,0.5
+			Rectangle:
+				size:self.size
+				pos:self.pos
+		orientation: 'vertical'
+		padding: '200dp', '50dp'
+		spacing:'100dp'
+		ScrollView:
+			BoxLayout:
+				size_hint_y: None
+	        	padding: '50dp', '50dp'
+	        	height: 1200
+            	spacing: 40
+	            orientation:'vertical'
+	            Image:
+        			source: 'hardware_arduino.png'
+        		Label:
+					text:"O Arduino UNO R3, utilizado em todos os projetos, é uma placa programável, de prototipagem eletrônica, utilizada para a realização dos circuitos. Ela possui pinos de potência, podendo ser de 3V ou 5V, pinos terra, quatorze entradas digitais, e seis entradas analógicas."
+					font_size: 25
+					text_size: root.width, None
+					size: self.texture_size
+	            MenuButton:
+					text:'Voltar'
+					on_release:app.root.current = 'arduino'
 
 <Experimentos>:
 	FloatLayout:
@@ -491,3 +917,4 @@ Manager:
 					text:'Escrever Frases no Monitor Serial'
 				MenuButton:
 					text:'Lixeira Inteligente'
+
